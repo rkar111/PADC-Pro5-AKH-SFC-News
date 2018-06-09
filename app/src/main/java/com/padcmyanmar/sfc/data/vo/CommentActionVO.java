@@ -39,7 +39,10 @@ public class CommentActionVO {
     private ActedUserVO actedUser;
 
     public String getUserId() {
-        return userId;
+        if (actedUser != null) {
+            return actedUser.getUserId();
+        }
+        return null;
     }
 
     public void setUserId(String userId) {

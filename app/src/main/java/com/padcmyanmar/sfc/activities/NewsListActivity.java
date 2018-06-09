@@ -87,14 +87,14 @@ public class NewsListActivity extends BaseActivity
             }
         });
 
-        mNewsModel = ViewModelProviders.of(this).get(NewsModel.class);
+        /*mNewsModel = ViewModelProviders.of(this).get(NewsModel.class);
         mNewsModel.initDatabase(this);
         mNewsModel.getNews().observe(this, new Observer<List<NewsVO>>() {
             @Override
             public void onChanged(@Nullable List<NewsVO> newsVOS) {
                 mNewsAdapter.setNewData(newsVOS);
             }
-        });
+        });*/
 
         rvNews.setEmptyView(vpEmptyNews);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
@@ -179,10 +179,10 @@ public class NewsListActivity extends BaseActivity
         startActivity(intent);
     }
 
-/*    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onNewsDataLoaded(RestApiEvents.NewsDataLoadedEvent event) {
         mNewsAdapter.appendNewData(event.getLoadNews());
-    }*/
+    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onErrorInvokingAPI(RestApiEvents.ErrorInvokingAPIEvent event) {

@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -18,9 +19,9 @@ import java.util.List;
  */
 
 @Entity(tableName = "News",
-        foreignKeys = @ForeignKey(entity = PublicationVO.class,
+        foreignKeys = {@ForeignKey(entity = PublicationVO.class,
                 parentColumns = "publicationId",
-                childColumns = "publication_id"))
+                childColumns = "publication_id", deferred = true)})
 
 public class NewsVO {
 
@@ -117,7 +118,11 @@ public class NewsVO {
     }
 
     public String getPublicationId() {
-        return publicationId;
+        if (publication != null) {
+            return publication.getPublicationId();
+        }
+        return null;
+
     }
 
     public void setPublicationId(String publicationId) {

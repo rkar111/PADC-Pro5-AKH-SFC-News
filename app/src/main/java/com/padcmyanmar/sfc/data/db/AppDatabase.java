@@ -25,6 +25,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract NewsDao newsDao();
 
+    public abstract PublicationDao publicationDao();
+
     public static AppDatabase getNewsDatabase(Context context) {
         if (INSTANCE == null) {
             INSTANCE =

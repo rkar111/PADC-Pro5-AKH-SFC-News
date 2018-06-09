@@ -6,7 +6,9 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
+import com.padcmyanmar.sfc.data.vo.ActedUserVO;
 import com.padcmyanmar.sfc.data.vo.NewsVO;
+import com.padcmyanmar.sfc.data.vo.PublicationVO;
 
 import java.util.List;
 
