@@ -51,7 +51,7 @@ public class MMNewsDataAgentImpl implements MMNewsDataAgent {
 
     @Override
     public void loadMMNews(String accessToken, int pageNo) {
-        Call<GetNewsResponse> loadMMNewsCall = theAPI.loadMMNews(pageNo, accessToken);
+     /*   Call<GetNewsResponse> loadMMNewsCall = theAPI.loadMMNews(pageNo, accessToken);
         loadMMNewsCall.enqueue(new Callback<GetNewsResponse>() {
             @Override
             public void onResponse(Call<GetNewsResponse> call, Response<GetNewsResponse> response) {
@@ -74,6 +74,6 @@ public class MMNewsDataAgentImpl implements MMNewsDataAgent {
                 RestApiEvents.ErrorInvokingAPIEvent errorEvent = new RestApiEvents.ErrorInvokingAPIEvent(t.getMessage());
                 EventBus.getDefault().post(errorEvent);
             }
-        });
+        });*/
     }
 }

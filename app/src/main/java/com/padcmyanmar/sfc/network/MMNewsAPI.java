@@ -15,7 +15,7 @@ public interface MMNewsAPI {
 
     @FormUrlEncoded
     @POST("v1/getMMNews.php")
-    Call<GetNewsResponse> loadMMNews(
+    io.reactivex.Observable<GetNewsResponse> loadMMNews(
             @Field("page") int pageIndex,
             @Field("access_token") String accessToken);
 }
